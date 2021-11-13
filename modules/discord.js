@@ -1,6 +1,6 @@
 const { MessageBuilder  } = require('discord-webhook-node');
 
-const sendTaskStatus = (hook, title: string, message: string, success: boolean) => {
+const sendTaskStatus = (hook, title, message, success) => {
     let embed = new MessageBuilder()
         .setTitle(title)
         .setColor(success === true? '#009800' : '#FC2929')
