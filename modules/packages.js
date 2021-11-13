@@ -10,10 +10,10 @@ const moveFile = (file, path) => {
     })  
 }
 
-const package = (package) => {
+const package = (from, to) => {
     return new Promise(resolve => {
         const process = require('child_process').spawn(
-            'bash', [settings.PLAYPEN_CLIENT_SCRIPT, 'pack', package, settings.PLAYPEN_NETWORK_PACKAGES]
+            'bash', [settings.PLAYPEN_CLIENT_SCRIPT, 'pack', from, to]
         )
         process.stderr.on('data', (data) => {
             console.error(`Something went wrong when packaging ${data}`);
@@ -30,7 +30,7 @@ const restartPlaypenNetwork = () => {
         'screen', ['-S', settings.PLAYPEN_NETWORK_SCREEN, '-X', 'stuff', '^c']
     )
     require('child_process').spawn(
-        'screen', ['-S', settings.PLAYPEN_NETWORK_SCREEN, '-X', 'stuff', settings.PLAYPEN_NETWORK_START_SCRIPT]
+        'screen', ['-S', settings.PLAYPEN_NETWORK_SCREEN, '-X', 'stuff', `${settings.PLAYPEN_NETWORK_START_COMMAND}\n`]
     )
 }
 
