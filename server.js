@@ -21,8 +21,8 @@ app.post('/', async (req, res) => {
     logger.log(`   Checking Authentication...`)
     const authResult = auth.authenticate(req.headers.authorization)
     if(!authResult.success){
-        logger.log(`   Authentication failed: ${authResult.message}`)
-        return respond(authResult.code, authResult.message)
+        logger.log(`   Authentication failed: ${authResult.error}`)
+        return respond(authResult.code, authResult.error)
     }
 
 
