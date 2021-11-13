@@ -1,6 +1,14 @@
+// Application settings
 const APP_PORT = 3000
+
+// Authentication settings
 const GIT_USERNAME = 'github@builderscoffee.eu'
 const GIT_PASSWORD = '$2y$10$.PXnr7LIDdoLF8jxmnhZPOM3jxoeOSvv5drGB/yasW5FQreHjT2X6'
+
+// Discord settings
+const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/909104879400812574/PXTRUyKBygPw78oAL_sY5S9jWgmNgb5-5Mksn-3ZTjS0VkoTDBqNcUmsMG2mWC5KDB-M';
+
+// File settings
 const PACKAGES_FOLDER = '/home/builderscoffee/playpen/pp-client/packages'
 const PLAYPEN_NETWORK_SCREEN = 'pp-network'
 const PLAYPEN_NETWORK_START_COMMAND = 'bash ./playpen-network.sh'
@@ -93,6 +101,7 @@ module.exports = {
     APP_PORT,
     GIT_USERNAME,
     GIT_PASSWORD,
+    DISCORD_WEBHOOK,
     PACKAGES_FOLDER,
     PLAYPEN_NETWORK_SCREEN,
     PLAYPEN_NETWORK_START_COMMAND,
